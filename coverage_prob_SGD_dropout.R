@@ -173,20 +173,16 @@ coverage_prob_sd[c(200000,250000,280000,290000,n)]
 
 ############################# Save data #############################
 
-data_n3e05_dim50_p05_alpha0125_rep200 <- list(n, d, p, N_rep, alpha_step, beta,
+# data_n3e05_dim50_p05_alpha0125_rep200 <- list(n, d, p, N_rep, alpha_step, beta,
                                             coverage_prob, coverage_prob_sd)
 
-save(data_n3e05_dim50_p05_alpha0125_rep200, file = 'SGD_dropout_n3e05_dim50_p05_alpha0125_rep200.RData')
+# save(data_n3e05_dim50_p05_alpha0125_rep200, file = 'SGD_dropout_n3e05_dim50_p05_alpha0125_rep200.RData')
 
 
-# load("~/Desktop/Academic/PhD/Research/Projects/Statistical_Learning/Dropout_Asymptotic/Simulation/SGD_dropout_n3e05_dim50_p05_alpha02_rep200.RData")
+# load("SGD_dropout_n3e05_dim50_p05_alpha0125_rep200.RData")
 # coverage_prob_read <- data_n3e05_dim50_p05_alpha02_rep200[[7]]
 # coverage_prob_sd_read <- data_n3e05_dim50_p05_alpha02_rep200[[8]]
-# 
-# # coverage_prob_read[c(100000,150000,180000,190000,200000)]
-# # coverage_prob_sd_read[c(100000,150000,180000,190000,200000)]
-# coverage_prob_read[c(200000,250000,280000,290000,300000)]
-# coverage_prob_sd_read[c(200000,250000,280000,290000,300000)]
+
 
 
 
