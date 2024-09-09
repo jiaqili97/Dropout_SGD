@@ -1,10 +1,8 @@
 #################### random sample (y,X) #######################
 data_gen_linear <- function(n,d){
   X <- matrix(rnorm(n*d, mean = 0, sd = 1), ncol=d)
-  # beta <- rep(1,d)
   beta <- seq(0, 1, length.out = d + 1)
   beta <- beta[2:(d+1)]
-  # beta <- c(1,2,5)
   epsilon <- rnorm(n, mean = 0, sd = 1)
   y <- X %*% beta + epsilon
   dat <- data.frame(y=y, x=X)
@@ -28,11 +26,11 @@ loss_grad_linear <- function(x, y, beta, D){
 
 
 N_rep <- 200 # number of repetitions
-n <- 300000 # number of observations
-d <- 50 # number of predictors
-p <- 0.5 # probability of retaining the coordinate
+n <- 200000 # number of observations
+d <- 10 # number of predictors
+p <- 0.9 # probability of retaining the coordinate
 
-alpha_step <- 0.0125 # constant learning rate
+alpha_step <- 0.05 # constant learning rate
 
 
 ################### non-overlapping blocks {B_m} ###############
@@ -173,15 +171,15 @@ coverage_prob_sd[c(200000,250000,280000,290000,n)]
 
 ############################# Save data #############################
 
-# data_n3e05_dim50_p05_alpha0125_rep200 <- list(n, d, p, N_rep, alpha_step, beta,
+# data_n2e05_dim10_p09_alpha05_rep200 <- list(n, d, p, N_rep, alpha_step, beta,
                                             coverage_prob, coverage_prob_sd)
 
-# save(data_n3e05_dim50_p05_alpha0125_rep200, file = 'SGD_dropout_n3e05_dim50_p05_alpha0125_rep200.RData')
+# save(data_n2e05_dim10_p09_alpha05_rep200, file = 'SGD_dropout_n2e05_dim10_p09_alpha05_rep200.RData')
 
 
-# load("SGD_dropout_n3e05_dim50_p05_alpha0125_rep200.RData")
-# coverage_prob_read <- data_n3e05_dim50_p05_alpha02_rep200[[7]]
-# coverage_prob_sd_read <- data_n3e05_dim50_p05_alpha02_rep200[[8]]
+# load("SGD_dropout_n2e05_dim10_p09_alpha05_rep200.RData")
+# coverage_prob_read <- data_n2e05_dim10_p09_alpha05_rep200[[7]]
+# coverage_prob_sd_read <- data_n2e05_dim10_p09_alpha05_rep200[[8]]
 
 
 
