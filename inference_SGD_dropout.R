@@ -164,8 +164,6 @@ plot(1:n,CI_length, type = 'l', ylab = 'Length of CI',
      xlab = 'n steps', main = 'Length of 95% CI', col = 'black')
 
 
-# Plot CI length of each coordinate
-
 
 
 
